@@ -1,0 +1,21 @@
+<h1>Application</h1>
+
+<div *ngIf="person">
+  Person loaded: {{ person | json }}
+</div>
+
+<div>
+  <button (click)="alter();">Alter something</button>
+</div>
+
+
+<!-- An alternative person template to be passed to personRenderer and rendered dynamically -->
+<!--
+<h2>Alternative person template</h2>
+<p>
+  The person is {{ person | json }}
+</p>
+<p>
+  Display contact: {{ displayContact?"Yes":"No" }}
+</p>
+-->

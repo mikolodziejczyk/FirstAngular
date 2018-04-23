@@ -1,0 +1,38 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<h2>Component</h2>
+<div>
+  <app-square text="first"></app-square>
+  <app-round text="first"></app-round>
+  <app-square text="second"></app-square>
+  <app-square text="third"></app-square>
+  <app-round text="second"></app-round>
+  <app-square text="fourth"></app-square>
+  <app-round text="third"></app-round>
+  <app-round text="fourth"></app-round>
+  <div class="round"><span>first HTML</span></div>
+  <div class="square"><span>second HTML</span></div>
+</div>
+<h2>Content</h2>
+<app-content>
+  <div class="round" #meToo><span>first</span></div>
+  <div class="square" #selectMe><span>first</span></div>
+  <div class="round" #another #selectMe><span>second</span></div>
+  <div class="square" #selectMe><span>second</span></div>
+  <div class="square" #another  #selectMe><span>third</span></div>
+  <app-square text="first"></app-square>
+  <app-round text="first"></app-round>
+  <app-square text="second"></app-square>
+  <app-square text="third"></app-square>
+  <app-round text="second"></app-round>
+</app-content>
+<h2>
+    Actions
+</h2>
+<div>
+    <button class="btn btn-success">Make selected</button>
+</div>

@@ -1,0 +1,11 @@
+﻿{
+    "/data": {
+      "target": "http://localhost:56856",
+      "secure": false
+    },
+    "/api": {
+      "target": "http://localhost:56856",
+      "secure": false
+    }
+}
+
