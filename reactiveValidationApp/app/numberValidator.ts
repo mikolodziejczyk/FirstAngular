@@ -1,15 +1,17 @@
-﻿import { ValidationErrors, FormControl } from "@angular/forms";
+import { ValidationErrors, AbstractControl } from "@angular/forms";
 
-export class NumberValidator {
-    static validate(control : FormControl) : ValidationErrors | null {
-        if (!control.value) return null;
+export function numberValidator(control: AbstractControl): ValidationErrors | null {
+    if (!control.value) return null;
 
-        let r = null;
-        let n = parseInt(<string>control.value);
-        if (isNaN(n)){
-            r = {number: true};
+    let r: ValidationErrors | null = null;
+    let v = control.value;
+
+    if (typeof (v) === "string") {
+        let res = parseFloat(v);
+        if (isNaN(res)) {
+            r = { "number": true };
         }
-
-        return r;
     }
+
+    return r;
 }
