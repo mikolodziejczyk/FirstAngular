@@ -1,0 +1,40 @@
+Angular miscellaneous form task
+
+1. Creating a control outside form
+In the app.component.html there's a control. 
+ - In app.component.ts create a corresponding formControl (named helpControl) and bind it in the markup.
+ - uncoment the fragment that log all changes to the console, remember about unsubscribing.
+
+2. FormArray item level validation
+In my-form.component there's a FormArray.
+ - how do you add item-level validators in a FormArray
+ - add the minLength(3) validation rule to the array items
+ - add error messages
+
+3. FormArray-level validation
+ - create a FormArray-level validator that requires that at least two values are specified
+ - how do you specify validators for a FormArray
+ - how do you specify multiple validators for a FormArray
+ - add an error message
+    - (!) how do you display an error message for a FormArray ?
+    - can a FormArray be invalid even if it has no errors? When? How does it affect displaying errors?
+
+
+4. FormArray unique values validator
+ - how do you validate for unique values in a FormArray?
+ - add a validator that enforces uniqueness, use existing nodes
+ - add an error message
+
+5. FormGroup inside a form
+In my-form.component.html there's a full name markup fragment.
+ - when creating the form controls, create a FormGroup for this fragment and FormControls for inputs inside
+   - set the initial control contents, e.g. "John" "Doe" so that the values appear in inputs immediatelly
+   - check the logged value on submit
+
+6. Enabling and disabling controls
+In my-form.component.ts implement
+ - toggleDisableControl (act on the first control of the FormArray)
+ - toggleDisableArray
+ - toggleDisableGroup
+ - how does disabling / enabling affect the form value - check
+ - how does disabling / enabling affect validation messages - check
