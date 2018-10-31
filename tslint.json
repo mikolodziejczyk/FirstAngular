@@ -83,14 +83,14 @@
       "check-else",
       "check-whitespace"
     ],
-    "prefer-const": true,
+    "prefer-const": false,
     "quotemark": [
-      true,
+      false,
       "single"
     ],
     "radix": true,
     "semicolon": [
-      true,
+      false,
       "always"
     ],
     "triple-equals": [
