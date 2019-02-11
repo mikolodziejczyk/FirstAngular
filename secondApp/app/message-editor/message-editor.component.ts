@@ -10,9 +10,9 @@ export class MessageEditorComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
   title: string;
   body: string;
+
+  ngOnInit() {
+  }
 }
