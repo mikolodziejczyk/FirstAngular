@@ -9,14 +9,12 @@ export class MyFormComponent implements OnInit {
 
   constructor() { }
 
+  counter: number;
+
   ngOnInit() {
   }
 
-  counter: number;
-
   onSubmit = () => {
-    
     alert(`Submit: ${this.counter}`);
-
   };
 }
