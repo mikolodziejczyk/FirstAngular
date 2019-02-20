@@ -10,7 +10,7 @@ export class CompanyService {
     constructor(private http: HttpClient) { }
 
     async getCompanies() : Promise<Company[]> {
-        let rawDataPromise: Promise<CompanyData[]> = this.http.get<CompanyData[]>("/data/company/getCompanies").toPromise();
+        let rawDataPromise: Promise<CompanyData[]> = this.http.get<CompanyData[]>("/data/companies.json").toPromise();
         let rawData: CompanyData[] = await rawDataPromise;
         let companies: Company[] = rawData.map(cd => Company.fromJSON(cd));
         return companies;
