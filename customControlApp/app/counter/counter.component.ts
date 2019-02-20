@@ -7,13 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CounterComponent implements OnInit {
 
-  constructor() { }
+  constructor () { }
+
+  _counterValue = null;
+  isDisabled: boolean = false;
 
   ngOnInit() {
   }
-
-
-  _counterValue = null;
 
   get counterValue() {
     return this._counterValue;
@@ -21,19 +21,18 @@ export class CounterComponent implements OnInit {
 
   @Input("counterValue")
   set counterValue(val) {
-    if (val === 0) val = null;
+    if (val === 0) { val = null; }
     this._counterValue = val;
   }
 
   increment() {
-    if (this.counterValue == null) this.counterValue = 0;
+    if (this.counterValue == null) { this.counterValue = 0; }
     this.counterValue++;
   }
 
   decrement() {
-    if (this.counterValue == null) this.counterValue = 0;
+    if (this.counterValue == null) { this.counterValue = 0; }
     this.counterValue--;
   }
 
-  isDisabled : boolean = false;
 }
