@@ -8,23 +8,17 @@ import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms'
 })
 export class MyFormComponent implements OnInit {
 
-
-
-  constructor(private fb: FormBuilder) {
+  constructor (private fb: FormBuilder) {
     this.createForm();
 
-    this.firstName=<FormControl>this.myForm.controls["firstName"];
-    this.lastName=<FormControl>this.myForm.controls["lastName"];
-    this.eMail=<FormControl>this.myForm.controls["eMail"];
-    this.notifyMe=<FormControl>this.myForm.controls["notifyMe"];
-    this.range1=<FormControl>this.myForm.controls["range1"];
-    this.range2=<FormControl>this.myForm.controls["range2"];
+    this.firstName = <FormControl>this.myForm.controls["firstName"];
+    this.lastName = <FormControl>this.myForm.controls["lastName"];
+    this.eMail = <FormControl>this.myForm.controls["eMail"];
+    this.notifyMe = <FormControl>this.myForm.controls["notifyMe"];
+    this.range1 = <FormControl>this.myForm.controls["range1"];
+    this.range2 = <FormControl>this.myForm.controls["range2"];
 
   }
-
-  ngOnInit() {
-  }
-
 
   myForm: FormGroup;
   firstName: FormControl;
@@ -33,6 +27,9 @@ export class MyFormComponent implements OnInit {
   notifyMe: FormControl;
   range1: FormControl;
   range2: FormControl;
+
+  ngOnInit() {
+  }
 
 
   createForm(): void {
