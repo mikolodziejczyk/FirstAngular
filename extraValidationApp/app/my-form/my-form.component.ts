@@ -10,12 +10,16 @@ import { Subscription } from 'rxjs/Subscription';
 export class MyFormComponent implements OnInit, OnDestroy {
 
 
-  constructor(private fb: FormBuilder) {
+  constructor (private fb: FormBuilder) {
     this.createForm();
 
     this.firstName = <FormControl>this.myForm.controls["firstName"];
-    
-   }
+
+  }
+
+  myForm: FormGroup;
+  firstName: FormControl;
+  private subscription: Subscription;
 
   ngOnInit() {
   }
@@ -24,25 +28,20 @@ export class MyFormComponent implements OnInit, OnDestroy {
 
   }
 
-  myForm : FormGroup;
-  firstName : FormControl;
-  private subscription : Subscription;
-  
-
   createForm(): void {
-    this.myForm = this.fb.group( {
-      firstName : ["", [Validators.minLength(3)]],
+    this.myForm = this.fb.group({
+      firstName: ["", [Validators.minLength(3)]],
       lastName: "",
       eInvoice: true
     });
   }
 
-  
+
   onSubmit() {
     this.markFormGroupTouched(this.myForm)
 
     if (this.myForm.invalid) return;
-    
+
     console.log("Saving form.");
 
     let values = this.myForm.value;
@@ -50,24 +49,24 @@ export class MyFormComponent implements OnInit, OnDestroy {
 
   };
 
-  
-/**
- * Marks all controls in a form group as touched
- * @param formGroup The group to process.
- */
-private markFormGroupTouched(formGroup: FormGroup) {
-   
-  formGroup.markAsTouched(); // mark the FormGroup itself as touched
 
-  Object.keys(formGroup.controls).map(x => formGroup.controls[x]).forEach(control => {
-    control.markAsTouched();
+  /**
+   * Marks all controls in a form group as touched
+   * @param formGroup The group to process.
+   */
+  private markFormGroupTouched(formGroup: FormGroup) {
 
-    // process nested FormGroups, recursively -- this part is not tested
-    if ((<FormGroup>control).controls) {
-      let nestedFg = (<FormGroup>control);
-      Object.keys(nestedFg.controls).map(x => nestedFg.controls[x]).forEach(c => this.markFormGroupTouched(nestedFg));
-    }
-  });
-}
+    formGroup.markAsTouched(); // mark the FormGroup itself as touched
+
+    Object.keys(formGroup.controls).map(x => formGroup.controls[x]).forEach(control => {
+      control.markAsTouched();
+
+      // process nested FormGroups, recursively -- this part is not tested
+      if ((<FormGroup>control).controls) {
+        let nestedFg = (<FormGroup>control);
+        Object.keys(nestedFg.controls).map(x => nestedFg.controls[x]).forEach(c => this.markFormGroupTouched(nestedFg));
+      }
+    });
+  }
 
 }
