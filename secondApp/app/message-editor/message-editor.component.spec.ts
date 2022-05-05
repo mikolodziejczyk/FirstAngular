@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { MessageEditorComponent } from './message-editor.component';
 
@@ -6,7 +6,7 @@ describe('MessageEditorComponent', () => {
   let component: MessageEditorComponent;
   let fixture: ComponentFixture<MessageEditorComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ MessageEditorComponent ]
     })

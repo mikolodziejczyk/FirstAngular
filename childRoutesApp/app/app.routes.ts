@@ -12,4 +12,4 @@ const routes: Routes = [
 ];
 
 // create the routing module here
-export const routing = RouterModule.forRoot(routes);
+export const routing = RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' });
