@@ -5,8 +5,11 @@
     "baseUrl": "./"
 ,
   },
-  "exclude": [
-    "test.ts",
-    "**/*.spec.ts"
+  "files": [
+    "main.ts",
+    "polyfills.ts"
+  ],
+  "include": [
+    "transclusionApp/**/*.d.ts"
   ]
 }
