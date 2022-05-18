@@ -1,18 +1,19 @@
-<form class="form-horizontal" #myForm="ngForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label class="col-sm-4 control-label" for="myCounter">A counter</label>
-    <div class="col-sm-8">
-      <app-counter></app-counter>
+<div class="container">
+  <form class="form-horizontal" #myForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="row mb-3">
+      <label class="form-label" for="myCounter">A counter</label>
+      <div>
+        <app-counter></app-counter>
+      </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-4">
-        <button class="btn btn-success" [disabled]="!myForm.form.valid">Save</button>
-        <button class="btn btn-danger" type="button">Cancel</button>
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-4">
+        <button class="btn btn-success me-5 px-5" [disabled]="!myForm.form.valid">Save</button>
+        <button class="btn btn-danger px-5" type="button">Cancel</button>
+      </div>
     </div>
-  </div>
-</form>
-
+  </form>
+</div>
 
 <p>{{ counter | json}}</p>
